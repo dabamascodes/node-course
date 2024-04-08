@@ -54,19 +54,17 @@ const { promisify } = require('util');
 // };
 // Promisify -----> getText
 
-
-
 const getText = promisify(readFile);
 
 async function read() {
     try {
-        const result = await getText('./data/first.txt');
+        const result = await getText('./data/first.txt', 'utf-8');
         console.log(result);
-        const result2 = await getText('./data/second.txt');
+        const result2 = await getText('./data/second.txt', 'utf-8');
         console.log(result2);
-        const result3 = await getText('./data/third.txt');
+        const result3 = await getText('./data/third.txt', 'utf-8');
         console.log(result3);
-        const result4 = await getText('./data/fourth.txt');
+        const result4 = await getText('./data/fourth.txt', 'utf-8');
         console.log(result4);
     } catch (error) {
         console.log(error);
